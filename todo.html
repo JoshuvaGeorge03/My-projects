@@ -1,0 +1,129 @@
+<html lang="en"><head>
+<meta charset="utf-8" />
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> todo</title>
+    <style>
+        body{
+        
+        }
+        .checked{
+        text-decoration: line-through;
+        
+        }
+    </style>
+</head>
+<body>
+    <div id="mydiv">
+        <h2>Todo List</h2>
+    <input type="text" id="input" placeholder="todo..."/>
+        <input type="button" value="add" onclick="todo()" />
+    </div>
+    <div id="output">
+    <ul id="myul">
+        <li class="checked"> go to doctor</li>
+        <li> go to play</li>
+        </ul>
+    </div>
+    <script>
+   
+        var li=document.getElementsByTagName("li");
+        for(var i=0;i<li.length;i++){
+        var span=document.createElement("span");
+            
+            var btn=document.createTextNode("\u00D7");
+            span.className="close";
+           
+            span.appendChild(btn);
+            li[i].appendChild(span);
+        }
+       
+    var close=document.getElementsByClassName("close");
+        
+    for(var i=0;i<close.length;i++){
+       
+        close[i].onclick= function () {
+      var vis=this.parentElement;
+            vis.style.display="none";
+        }
+       
+    }
+        
+        
+        for(var i=0;i<li.length;i++){
+        li[i].addEventListener('click',function (e){
+        if(e.target.tagName=="LI"){
+            
+         e.target.classList.toggle("checked");
+         }
+         },false);
+        
+        }
+        
+       
+      /*  var listed=document.getElementById("myul");
+         listed.addEventListener('click',function (e) {
+         if(e.target.tagName=="LI"){
+         e.target.classList.toggle("checked");
+         }
+         },false);*/
+        
+        
+     function todo() {
+             
+    var input=document.getElementById("input").value;
+        var todolist=document.getElementById("myul");
+        var list=document.createElement("li");
+        list.textContent=input;
+        if(input==''){
+        alert('enter some text');
+        }
+        else{
+        todolist.insertBefore(list,todolist.firstElementChild);
+        }
+        document.getElementById("input").value='';
+        
+        
+       
+        //  
+        var span=document.createElement("span");
+            
+            var btn=document.createTextNode("\u00D7");
+            span.className="close";
+           
+            span.appendChild(btn);
+            list.appendChild(span);
+       console.log(list);
+       
+    
+    for(var i=0;i<close.length;i++){
+       
+        close[i].onclick= function () {
+      var vis=this.parentElement;
+            vis.style.display="none";
+        }
+       
+    }
+         
+       list.addEventListener('click',function (e){
+        if(e.target.tagName=="LI"){
+            
+         e.target.classList.toggle("checked");
+         }
+         },false);
+        
+        
+    }
+    
+                        
+    </script>
+
+    </body>
+
+
+
+
+
+
+</html>

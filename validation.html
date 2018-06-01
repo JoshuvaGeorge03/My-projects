@@ -1,0 +1,142 @@
+<html>
+<head>
+    <title>Validation</title>
+	<meta charset = "UTF-8" />
+    <script src="validation.js">
+    </script>
+    <style>
+        body{
+        background: -webkit-gradient(linear, left top, right top, from(#1a82f7), to(#2F2727));
+            text-align: left;
+        }
+    #container{
+                     background-color: azure;
+                    
+                    padding: 20px 20px 100px 20px;
+                    width: 700px;
+         
+                    }
+        p{
+            font-weight: 100;
+            font-family: sans-serif;
+            font-style: normal;
+              
+        }
+        
+        input[type="text"],[type="password"]{
+        border: 5px solid black;
+            border-radius: 10px;
+            text-align: justify;
+            
+        }
+
+td{
+padding:15px;
+}
+
+    </style>
+	</head>
+<body>
+    <div id="container">
+    <form name="validation" id="validation1" onsubmit="return validate()">
+     <table>
+<tr>
+          <td><p>Enter Name: </p></td><td><input type="text" id="name"  name="name1" size="20" title="enter the name less than 15 characters" autofocus /></td>
+</tr>
+         <tr>
+         <td><p>User Name:</p></td> <td><input type="text" id="uname" name="uname1" size="20" title="should be in lower case and without space and 1 number should be added"  pattern= "(?=.*\d)(?=.*[a-z]).{5,}" /> </td>
+</tr>
+<tr>
+    <td>    <p>Email address:</p></td><td> <input type="text" id="mail" name="mail1" size=20 autocomplete="on" title="enter the valid mail"/> </td> 
+</tr>
+       <tr><td> <p>Password: </p></td><td><input type="password" id ="password" name="password1" size=20 autocomplete="on"  title="should be with 1 uppercase letter and 1 lowercaseletter and 1 number should be added and min words should be 8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>            </td>
+</tr>
+<tr>
+    <td>    <p>Confirm Password: </p></td><td><input type="password" id ="password2" name="password3" autocomplete="on" title="type the same password as in above field"/>        </td>
+</tr>
+<tr>         
+<td><p> <label for="date"> Birthday: </label> </p></td><td><input type="date" id="date" name="date1"  min="1990-01-22" title="minimum age should be 18" /></td>
+</tr>    
+             
+<tr>
+<td> <label for="sub">Major Subjects:</label></td><td> <select id="sub">
+				  <option value="Physics" selected> physics</option>
+				  <option value="maths" > Maths</option>
+				  <option value="Chemistry" >chemistry </option>
+				  </select></td>
+</tr>
+<tr>
+		<td><p>Percentage Range: </p></td><td><input type="number" id="percentage" name="percentage1" min="0" max="100" /> </td></tr>
+<tr>
+<td>       
+ <p>country code</p></td><td><input type=text id ="country" name="country1" pattern="[0-9]{6}" /></td></tr>
+<tr>
+    <td>		
+		<input type="submit" value="submit"  /></td>
+  <td> <input type="reset" /></td>
+         </tr>
+
+		
+		
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+            </table>   
+               </form>
+    </div></body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

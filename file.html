@@ -1,0 +1,63 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+<style>
+
+</style>
+
+</head>
+<body>
+
+<!--<form >
+  <input type="text" name="name" value="test.txt">
+  <textarea rows=3 cols=50 name="text">Please type in this box. When you 
+
+click the Download button, the contents of this box will be downloaded to 
+
+your machine at the location you specify. Pretty nifty. </textarea>
+    
+    
+  <input type="submit" value="Download">
+    
+    
+    
+</form> -->
+<script language="Javascript" >
+    /*function download(filename, text) {
+      var pom = document.createElement('a');
+      pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + 
+    
+    encodeURIComponent(text));
+      pom.setAttribute('download', filename);
+    
+      pom.style.display = 'none';
+      document.body.appendChild(pom);
+    
+      pom.click();
+    
+      document.body.removeChild(pom);
+    }*/
+        var add="/home/vicky/Documents/JS/validation2.html"
+    var tab="_blank"
+    var link=document.createElement('a');
+       function load(){
+    
+    link.setAttribute('href',add);
+    link.setAttribute('target','_blank');
+    link.style.display="none";
+    document.body.appendChild(link);
+    clic();
+       }
+    function clic(){
+      alert("joker");
+    link.style.display="block";
+    
+    }
+    </script>
+    <button onclick="load()" > submit
+    </button>
+    
+</body>
+</html>
+
+

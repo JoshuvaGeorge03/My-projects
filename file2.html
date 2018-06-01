@@ -1,0 +1,60 @@
+<html>
+<head>
+<style>
+    input[type="button"]{
+    width:100px;
+        height: 50px;
+    }
+</style>
+<script language="Javascript" >
+/*function download(filename, text) {
+  var pom = document.createElement('a');
+  pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + 
+
+encodeURIComponent(text));
+  pom.setAttribute('download', filename);
+
+  pom.style.display = 'none';
+  document.body.appendChild(pom);
+
+  pom.click();
+
+  document.body.removeChild(pom);
+}*/
+    var add="/home/vicky/Documents/JS/validation2.html"
+var tab="_blank"
+var link=document.createElement('a');
+   function load(){
+
+link.setAttribute('href','validation2.html');
+link.setAttribute('target','_blank');
+link.style.display="none";
+document.body.appendChild(link);
+click();
+   }
+function click(){
+link.style.display="block";
+}
+</script>
+</head>
+<body>
+
+<!--<form >
+  <input type="text" name="name" value="test.txt">
+  <textarea rows=3 cols=50 name="text">Please type in this box. When you 
+
+click the Download button, the contents of this box will be downloaded to 
+
+your machine at the location you specify. Pretty nifty. </textarea>
+    
+    
+  <input type="submit" value="Download">
+    
+    
+    
+</form> -->
+    
+    <button onclick="load()" >
+    </button>
+</body>
+</html>

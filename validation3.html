@@ -1,0 +1,116 @@
+<html>
+<head>
+    <title>Validation</title>
+	<meta charset = "UTF-8" />
+    <script src="validation2.js">
+    </script>
+    <style>
+        body{
+        background: -webkit-gradient(linear, left top, right top, from(#1a82f7), to(#2F2727));
+        }
+        #container{
+            width: 500px;
+        }
+.maincontent > p {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+.maincontent>p>label{
+  width: 125px;
+  flex: none;
+   /* padding: 0 50px 0 0; */
+}
+.maincontent>p>input{
+    flex: 1 1 auto;
+}
+.maincontent>p>select{
+    flex:1 1 auto;
+}
+
+
+    </style>
+	</head>
+<body>
+<div id="container">
+    <form name="validation" id="validation1" onsubmit="return validate2()" class="maincontent">
+        <p> <label for="name">Name: </label> <input type="text" id="name"  name="name1" size="20" title="enter the name less than 15 characters" autofocus /></p>
+        <p><label for="uname">User Name: </label> <input type="text" id="uname" name="uname1" size="20" title="should be in lower case and without space and 1 number should be added"  pattern= "(?=.*\d)(?=.*[a-z]).{5,}" />  </p>
+        <p><label for="mail" >Email address: </label><input type="text" id="mail" name="mail1" size=35  autocomplete="on" title="enter the valid mail"/> </p>
+        <p><label for="password">Password: </label><input type="password" id ="password" name="password1" autocomplete="on"  title="should be with 1 uppercase letter and 1 lowercaseletter and 1 number should be added and min words should be 8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>            </p>
+        <p><label for="password2">Confirm Password: </label> <input type="password" id ="password2" name="password3" autocomplete="on" title="type the same password as in above field"/>            </p>
+        <p> <label for="date"> Birthday: </label> <input type="date" id="date" name="date1"  min="1990-01-22"/></p>      
+        <p> <label for="sub">Major Subjects: </label><select id="sub">
+				  <option value="Physics" selected> physics</option>
+				  <option value="maths" > Maths</option>
+				  <option value="Chemistry" >chemistry </option>
+				  </select></p>
+		<p><label for="percentage">Percentage Range: </label> <input type="number" id="percentage" name="percentage1" min="0" max="100" /> </p>
+        <p><label for="country">country code</label> <input type=text id ="country" name="country1" pattern="[0-9]{6}" /></p>
+		
+		<input type="submit" value="submit"  />
+		
+		
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+    </form>
+    </div></body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

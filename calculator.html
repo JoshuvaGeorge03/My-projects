@@ -1,0 +1,100 @@
+       
+         <html lang="en">
+            <head><title> Calculator </title>
+                <meta charset="UTF-8" />
+           
+          
+                <style>
+                div{
+                    background-color: aliceblue;
+                    background: transparent;
+                    border: 3px solid black;
+                    border-radius: 3px;
+                    padding: 20px 20px 100px 20px;
+                    width: 400px;
+
+                    }
+
+                        input[type="button"]{
+                        background-color: #B2B2C9;
+            border-radius: 10px;
+            border-color: #A1A1AF;
+            width:50px;
+            height: 40px;
+        border-style: solid;
+                    }
+                    input[type="text"]{
+                    border-color: aqua;
+                        width: 250px;
+                        height: 40px;
+                        border-radius: 10px;
+                        border: 4px solid;
+                    }
+                </style>
+            </head>
+            <body name="body"> 
+            <div name="container">
+
+
+
+        <form name="calculator">
+            <input type="text" name="display" />
+            <br>
+            <br>
+             <input type="button" value="1" onclick="display(this.value)"/>
+             <input type="button" value="2" onclick="calculator.display.value += this.value" />
+             <input type="button" value="3" onclick="calculator.display.value += this.value" />
+             <input type="button" value="+" onclick="calculator.display.value += '+'" />
+            <br>
+             <input type="button" value="4" onclick="calculator.display.value += this.value" />
+             <input type="button" value="5" onclick="calculator.display.value += this.value" />
+             <input type="button" value="6" onclick="calculator.display.value += this.value" />
+             <input type="button" value="-" onclick="calculator.display.value += '-'" />
+            <br>
+             <input type="button" value="7" onclick="calculator.display.value += this.value" />
+             <input type="button" value="8" onclick="calculator.display.value += this.value" />
+             <input type="button" value="9" onclick="calculator.display.value += this.value" />
+             <input type="button" value="0" onclick="calculator.display.value += this.value" />
+            <br>
+             <input type="button" value="*" onclick="calculator.display.value += this.value" />
+             <input type="button" value="/" onclick="calculator.display.value += this.value" />
+             <input type="button" value="c" onclick="calculator.display.value = ''" />
+             <input type="button" value="=" onclick="calculator.display.value = eval(calculator.display.value)" />
+            <br>
+
+                </form>
+
+
+        </div> 
+        <script>
+                
+                function display(obj){
+                    val=obj.value;
+        //calculator.display.value+=a;
+        //var val=  document.body.children[0].firstElementChild.firstElementChild;
+           document.body.children[0].firstElementChild.firstElementChild.value+=val;
+          //  document.getElementsByName
+        }
+                    </script>
+
+            </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </html>

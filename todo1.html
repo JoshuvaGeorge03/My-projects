@@ -1,0 +1,186 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>todo alternative model</title>
+        <style>
+            td{
+                border: 2px solid black;
+                }
+            table{
+                border: 5px solid black;
+                }
+            #container{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                }
+            #input1{
+                width: 100px;
+            }
+            #input{
+                flex:1;
+            }
+            #container_2{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+            }
+            #input2{
+                width: 100px;
+            }
+            #state{
+                flex: 1;
+                padding: 5px;
+                text-align: center;
+            }
+            #container_3{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+            }
+            #add{
+                flex:1;
+            }
+
+        </style>
+        
+    </head>
+    <body>
+        <h2>My Todo List</h2>
+        <div id="container" >
+            <label for="input" id="input1" > Events: </label>
+            <input id="input" name="add" type="text" placeholder="todo..." />
+            <br>
+        </div>
+
+        <div id="container_2">
+            <label for="sub" id="input2">emergency:</label>
+            <select id="state">
+                <option value="Urgent" > Urgent</option>
+                <option value="important" >Important</option>
+                <option value="Normal" selected>Normal </option>
+            </select>
+            <br><br>
+        </div>
+        <div id="container_3">
+        <input type="button" id="add" value="add event" onclick="addRow()" />
+        </div>
+        <div id="todo">
+            <br><br>
+            <table id="output" >
+                <tr>
+                    <td>Events</td>
+                    <td>Date Entered</td>
+                    <td>Priority List</td>
+                    <td>close</td>
+                </tr>
+                <tr>
+                    <td contenteditable="true">Go to Park</td>
+                    <td readonly></td>
+                    <td contenteditable="true">Normal</td>
+                    <td readonly></td>
+                </tr>
+            <!--<tr>
+                    <td>Call MOM</td>
+                    <td></td>
+                    <td>Important</td>
+                    <td></td>
+                </tr> -->
+            </table>
+        </div>
+        <script>
+
+             var close=document.createElement("span");
+            close.className="delete";
+            var button=document.createTextNode("\u00D7");
+            close.appendChild(button);
+
+            var input=document.getElementById("input").value;
+            var row=document.getElementsByTagName("TR");
+            
+            var date=new Date();
+            var day=date.getDay();
+            var month=date.getMonth()+1;
+            var year=date.getFullYear();
+            /*var hours=date.getHours();
+            var minutes=date.getMinutes();*/
+            var time=date.toLocaleTimeString();
+            var today=day+"/"+month+"/"+year+"  "+time;
+            
+            for(var i=1;i<row.length;i++){
+                var cell_length=row[i].cells.length;
+                for(var j=0;j<cell_length;j++){
+                 // if(i>=1){
+                        if(j==1){
+                            row[i].cells[j].innerHTML=today;
+                        }
+                        if(j==3){
+                            row[i].cells[j].appendChild(close);
+                        }
+                //  }
+
+                }
+            }
+
+            close.addEventListener('click',function(e){
+                var del=e.target.parentNode.parentNode;
+                del.style.display='none';
+            });
+
+            function addRow(){
+
+                //getting values 
+            var input=document.getElementById("input").value;
+            var table=document.getElementById("output");
+            var Priority=document.getElementById("state").value;
+
+            if(input==''){
+                alert("enter the event")
+            }else{
+
+                //adding new row dynamically
+            var row=table.insertRow(1);
+            var cell1=row.insertCell(0);
+            var cell2=row.insertCell(1);
+            var cell3=row.insertCell(2);
+            var cell4=row.insertCell(3);
+                //obtaining date entered value;
+            var date=new Date();
+            var day=date.getDay();
+            var month=date.getMonth()+1;
+            var yeardoctor=date.getFullYear();
+            /*var hours=date.getHours();
+            var minutes=date.getMinutes();*/
+            var time=date.toLocaleTimeString();
+            var today=day+"/"+month+"/"+year+"  "+time;
+            //adding close buttons;
+            var close=document.createElement("span");
+            close.className="delete";
+            var button=document.createTextNode("\u00D7");
+            close.appendChild(button);
+            cell4.appendChild(close);
+            //setting values each cell in a row
+            cell1.innerHTML=input;
+            cell2.innerHTML=today;
+            cell3.innerHTML=Priority;
+            cell1.contentEditable="true";
+            cell2.readonly="true";
+            cell3.contentEditable="true";
+            cell4.readonly="true";
+            //adding close function
+            /*we are inputting event as argument, 
+            to get target element*/
+            close.addEventListener('click',function(e){
+                var del=e.target.parentNode.parentNode;
+                del.style.display='none';
+            });
+            }
+            document.getElementById("input").value='';
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<html><head>
+<meta charset="UTF-8" />
+<script>
+    function display(){
+        var date=document.getElementById("date").value;
+      var day=new Date();
+var birth=new Date(date);
+var age = day.getFullYear() - birth.getFullYear();
+        var month=day.getMonth()-birth.getMonth();
+        if(month < 0 || (month==0 && day.getDate() < birth.getDate())){
+        age--;
+        }
+        alert(age);
+    }
+
+
+    function calc(){
+
+var date=document.getElementById("date").value;
+      var day=new Date();
+var birth=new Date(date);
+var age = day.getFullYear() - birth.getFullYear();
+        var month=day.getMonth()-birth.getMonth();
+        if(month < 0 || (month==0 && day.getDate() < birth.getDate())){
+        age--;
+    }
+if(age>18){
+return true;
+}
+else{
+alert("enter valid date");
+return false;
+}
+    }
+
+</script>
+
+
+
+</head>
+<body>
+<form name="validate" id="mform1" onsubmit="return calc()" >
+<input type="date" name="date1" id="date"/>
+    
+<input type=submit />
+</form>
+</body>
+</html>

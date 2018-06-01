@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<script>
+window.onload=function (){
+if(window.File && window.FileReader && window.FileList && window.Blob){
+var filetobeload= document.getElementById("files");
+document.getElementById("btn").addEventListener("click",function (){
+var extension = /text.*/;
+var file=filetobeload.files[0];
+if(file.type.match(extension)){
+var reader= new FileReader();
+reader.onload=function (e){
+console.log(e);
+var container=document.getElementById("container");
+container.innerText= reader.result;
+}
+reader.readAsText(file);
+}
+else{
+alert("please select text file");
+}
+
+},false);
+}
+else{
+alert("files are not supported");
+}
+}
+</script>
+</head>
+<body>
+<form name="form" id="form1">
+<input type="file" id="files" />
+<input type="button" value="submit" id="btn" />
+</form>
+<div id="container">
+</div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

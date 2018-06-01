@@ -1,0 +1,29 @@
+
+<html><head>
+<meta charset="UTF-8" />
+
+<script>
+    function number(){
+    var fileinput=document.getElementById("files");
+        var files=fileinput.files;
+        for(var i=0;i<files.length;i++);
+        {
+            file=files[i];
+            alert(file.name);
+            
+        }
+    }
+    
+    
+    </script>
+
+
+</head>
+<body>
+<form name="validate" id="mform1"  onsubmit="number()">
+
+    <input type="file" multiple id="files" />
+<input type=submit />
+</form>
+</body>
+</html>

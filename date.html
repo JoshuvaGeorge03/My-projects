@@ -1,0 +1,40 @@
+<html><head>
+<meta charset="UTF-8" />
+<script>
+window.onload=function(){
+var myForm = document.getElementById("mform1");
+
+myForm.addEventListener('submit',function (){
+var date=document.getElementById("date").value;
+var day=new Date();
+var birth=new Date(date);
+ var day = new Date();
+    var birth=new Date(date);
+    var age = day.getFullYear() - birth.getFullYear();
+        var month=day.getMonth()-birth.getMonth();
+        if(month < 0 || (month==0 && day.getDate() < birth.getDate())){
+        age--;
+        }
+if(age<18){
+alert("age should not below 18");
+            return false;
+}
+else{
+return true;
+}
+},false);
+}
+
+
+</script>
+
+
+
+</head>
+<body>
+<form name="validate" id="mform1">
+<input type="date" name="date1" id="date"/>
+<input type=submit />
+</form>
+</body>
+</html>
